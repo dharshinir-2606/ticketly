@@ -1,0 +1,44 @@
+:root { --bg:#eef1f6; --ink:#172033; --muted:#65708a; --card:#fff; --blue:#3b4cff; --amber:#ff8a3d; --green:#1f9d6b; --red:#d6455d; }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.5 'DM Sans',system-ui,sans-serif; }
+h1,h2,h3,.brand,.stub-date b,.timer,.stats b { font-family:'Bricolage Grotesque',sans-serif; letter-spacing:-.02em; }
+h1 { font-size:clamp(28px,5vw,44px); line-height:1.1; margin:8px 0 20px; }
+h2 { margin:32px 0 12px; } h3 { margin:0 0 4px; }
+p { margin:2px 0; } .muted,small { color:var(--muted); }
+header { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; padding:16px 24px; max-width:960px; margin:auto; }
+nav { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+.brand { background:none; color:var(--blue); font-size:26px; font-weight:700; padding:0; }
+main { max-width:960px; margin:auto; padding:8px 24px 64px; }
+button { font:inherit; font-weight:500; background:var(--ink); color:#fff; border:0; border-radius:10px; padding:10px 16px; cursor:pointer; }
+button:hover:not(:disabled) { background:var(--blue); }
+button:disabled { opacity:.4; cursor:not-allowed; }
+button.ghost { background:transparent; color:var(--ink); border:1.5px solid #cdd4e2; }
+button.link { background:none; color:var(--ink); padding:8px; }
+:focus-visible { outline:3px solid var(--blue); outline-offset:2px; }
+input,select,textarea { font:inherit; width:100%; padding:10px 12px; margin-bottom:10px; border:1.5px solid #cdd4e2; border-radius:10px; background:#fff; }
+select { width:auto; margin:0; }
+label { display:block; color:var(--muted); font-size:14px; }
+.card { background:var(--card); border-radius:16px; padding:20px; }
+.narrow { max-width:380px; margin:auto; } .narrow button { width:100%; margin-top:6px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:20px; }
+.row { display:flex; gap:10px; flex-wrap:wrap; } .row input { flex:1; min-width:90px; }
+/* The ticket stub: the one memorable element */
+.stub { display:grid; grid-template-columns:1fr 96px; text-align:left; background:var(--card); color:var(--ink); padding:0; border-radius:16px; position:relative; overflow:hidden; }
+.stub:hover:not(:disabled) { background:var(--card); transform:translateY(-3px); transition:transform .15s; }
+.stub-main { padding:20px; }
+.stub-date { display:flex; flex-direction:column; justify-content:center; align-items:center; background:var(--blue); color:#fff; border-left:2px dashed var(--bg); }
+.stub-date b { font-size:36px; line-height:1; } .stub-date span { font-size:14px; }
+.stub::before,.stub::after { content:''; position:absolute; right:84px; width:24px; height:24px; border-radius:50%; background:var(--bg); }
+.stub::before { top:-12px; } .stub::after { bottom:-12px; }
+.tier { display:flex; align-items:center; gap:12px; background:var(--card); border-radius:14px; padding:14px 18px; margin-bottom:10px; }
+.tier > div:first-child { flex:1; }
+.hold { background:#fff4ea; border:2px dashed var(--amber); border-radius:16px; padding:18px; display:grid; gap:12px; margin:16px 0; }
+.timer { font-size:40px; color:var(--amber); display:flex; flex-direction:column; line-height:1; } .timer small { font:14px 'DM Sans'; }
+.note { padding:10px 14px; border-radius:10px; margin:10px 0; }
+.note.good { background:#dff5ec; color:#0e6b49; } .note.bad { background:#fde4e8; color:#9c2038; }
+.pill { padding:4px 12px; border-radius:99px; font-size:14px; background:#e3e7f1; }
+.pill.paid { background:#dff5ec; color:#0e6b49; } .pill.failed { background:#fde4e8; color:#9c2038; }
+.stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:14px; margin-bottom:16px; }
+.stats div { background:var(--card); border-radius:16px; padding:18px; } .stats b { display:block; font-size:34px; } .stats span { color:var(--muted); }
+.charts { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:14px; }
+@media (prefers-reduced-motion:reduce) { * { transition:none !important; } }
