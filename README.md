@@ -3,7 +3,7 @@
 Event and ticket reservation system. Organizers create events with ticket tiers (VIP, General). Attendees hold tickets for 10 minutes, then pay. The system never double-books a ticket.
 
 GitHub: https://github.com/dharshinir-2606/ticketly
-Live URL: (add after deployment)
+Live URL:https://ticketly-tau.vercel.app/
 
 ## Features
 - Roles: Admin, Organizer, Attendee
